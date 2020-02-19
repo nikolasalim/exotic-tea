@@ -13,16 +13,24 @@ class ProductsFeed extends React.Component {
     // fetchProducts
   }
 
+  addingToCart = id => {
+    // if (id === this.state.items.id) {
+    //   // console.log("ITS WORKING for this id:", id);
+    // }
+    console.log("ITS WORKING for this id", id);
+  };
+
   render() {
     return (
       <div>
-        <SingleItem />
-        <SingleItem />
-        <SingleItem />
-        <SingleItem />
-        <SingleItem />
         {this.props.items.map(product => (
-          <SingleItem name={product.name} price={product.price} />
+          <SingleItem
+            id={product.id}
+            url={product.imageUrl}
+            name={product.name}
+            price={product.price}
+            addToCart={this.addingToCart}
+          />
         ))}
       </div>
     );
