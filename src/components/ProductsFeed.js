@@ -17,7 +17,7 @@ class ProductsFeed extends React.Component {
     // if (id === this.state.items.id) {
     //   // console.log("ITS WORKING for this id:", id);
     // }
-    console.log("ITS WORKING for this id", id);
+    console.log("ITS WORKINnnG for this id", id);
   };
 
   render() {
