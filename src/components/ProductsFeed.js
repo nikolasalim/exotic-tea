@@ -1,7 +1,7 @@
 import React from "react";
 import SingleItem from "./SingleItem";
 import { connect } from "react-redux";
-import { fetchProducts } from "../store/ProductsFeed/actions";
+import { fetchProducts, addingItemToCart } from "../store/ProductsFeed/actions";
 
 class ProductsFeed extends React.Component {
   state = {
@@ -10,17 +10,14 @@ class ProductsFeed extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(fetchProducts);
-    // fetchProducts
   }
 
   addingToCart = id => {
-    // if (id === this.state.items.id) {
-    //   // console.log("ITS WORKING for this id:", id);
-    // }
-    console.log("ITS WORKINnnG for this id", id);
+    this.props.dispatch(addingItemToCart(id));
   };
 
   render() {
+    // console.log("STATE HERE IS", this.state);
     return (
       <div>
         {this.props.items.map(product => (
@@ -39,9 +36,11 @@ class ProductsFeed extends React.Component {
 
 function mapStateToProps(reduxState) {
   // console.log("reduxState is", reduxState);
-  // console.log("reduxState.products is:", reduxState);
+  // console.log("reduxState.products.list is:", reduxState.products.list);
+  // console.log("reduxState.products.cart is:", reduxState.products.cart);
   return {
-    items: reduxState.products.list
+    items: reduxState.products.list,
+    cart: reduxState.products.cart
   };
 }
 

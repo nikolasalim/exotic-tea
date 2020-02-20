@@ -1,7 +1,28 @@
 import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-export default class NavBar extends React.Component {
+class NavBar extends React.Component {
   render() {
-    return <h1>this is the header</h1>;
+    return (
+      <div>
+        <Link to="/">
+          <p>Home</p>
+        </Link>
+        <p>About</p>
+        <p>Contact</p>
+        <Link to="/checkout">
+          <p>Cart: {this.props.cart.length}</p>
+        </Link>
+      </div>
+    );
   }
 }
+
+function mapStateToProps(reduxState) {
+  return {
+    cart: reduxState.products.cart
+  };
+}
+
+export default connect(mapStateToProps)(NavBar);

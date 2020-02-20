@@ -4,6 +4,7 @@ export default class SingleItem extends React.Component {
   submitHandler = () => {
     this.props.addToCart(this.props.id);
   };
+
   render() {
     return (
       <div>
