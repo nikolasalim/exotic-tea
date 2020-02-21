@@ -34,18 +34,7 @@ export default function productsFeedReducer(state = initialState, action) {
     }
     case "REMOVE_FROM_CART": {
       const productId = action.payload;
-      //const inCart = state.cart.find(p => p.id === productId);
-      // if (!inCart) return state;
-
-      // return inCart.quantity > 1
-      //   ? {
-      //       ...state,
-      //       cart: state.cart.map(p =>
-      //         p.id === productId ? { ...p, quantity: p.quantity - 1 } : p
-      //       )
-      //     }
-      //   : { ...state, cart: state.cart.filter(p => p.id !== productId) };
-
+      //
       const inCart = state.cart.find(p => p.id === productId);
       // First check if already in cart
       if (!inCart) {
@@ -76,3 +65,15 @@ export default function productsFeedReducer(state = initialState, action) {
     }
   }
 }
+
+//const inCart = state.cart.find(p => p.id === productId);
+// if (!inCart) return state;
+
+// return inCart.quantity > 1
+//   ? {
+//       ...state,
+//       cart: state.cart.map(p =>
+//         p.id === productId ? { ...p, quantity: p.quantity - 1 } : p
+//       )
+//     }
+//   : { ...state, cart: state.cart.filter(p => p.id !== productId) };

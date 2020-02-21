@@ -1,4 +1,5 @@
 import React from "react";
+import "./singleItem.css";
 
 export default class SingleItem extends React.Component {
   submitHandler = () => {
@@ -7,7 +8,7 @@ export default class SingleItem extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="single-item">
         <img src={this.props.url}></img>
         <p>{this.props.name}</p>
         <p>{this.props.price}</p>

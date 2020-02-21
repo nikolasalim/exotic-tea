@@ -1,5 +1,6 @@
 import React from "react";
 import ProductsFeed from "./ProductsFeed";
+import "./mainStore.css";
 
 class MainStore extends React.Component {
   state = {};
@@ -9,7 +10,9 @@ class MainStore extends React.Component {
       <div>
         <div className="hero-banner"></div>
         <div className="about-box"></div>
-        <ProductsFeed />
+        <div className="feed-box">
+          <ProductsFeed />
+        </div>
       </div>
     );
   }

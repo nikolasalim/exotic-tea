@@ -1,0 +1,11 @@
+/* body {
+  background-color: green;
+  width: 1000px;
+} */
+
+.feed-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

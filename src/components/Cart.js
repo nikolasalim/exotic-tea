@@ -42,16 +42,12 @@ class Cart extends React.Component {
         })}
         <h1>
           Total price:
-          {this.props.cart.length === 0 ? (
-            <span> 0</span>
-          ) : (
-            <span>
-              {" "}
-              {this.props.cart
-                .map(product => product.price)
-                .reduce((acc, price) => acc + parseInt(price), 0)}
-            </span>
-          )}
+          <span>
+            {" "}
+            {this.props.cart
+              .map(product => product.price * product.quantity)
+              .reduce((acc, price) => acc + parseInt(price), 0)}
+          </span>
         </h1>
       </div>
     );
