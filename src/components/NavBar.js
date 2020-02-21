@@ -12,12 +12,22 @@ class NavBar extends React.Component {
         <p>About</p>
         <p>Contact</p>
         <Link to="/checkout">
-          <p>Cart: {this.props.cart.length}</p>
+          <p>
+            {/* {console.log("logging this.props.cart", this.props.cart)} */}
+            Cart:{" "}
+            {this.props.cart.length === 0
+              ? 0
+              : this.props.cart
+                  .map(product => product.quantity)
+                  .reduce((acc, price) => acc + parseInt(price), 0)}
+          </p>
         </Link>
       </div>
     );
   }
 }
+
+// (acc, quantity) => acc + quantity, 0)
 
 function mapStateToProps(reduxState) {
   return {

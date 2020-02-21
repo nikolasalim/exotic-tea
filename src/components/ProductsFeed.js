@@ -17,9 +17,28 @@ class ProductsFeed extends React.Component {
   };
 
   render() {
-    // console.log("STATE HERE IS", this.state);
+    /*
+        thoughts:
+        should we do this in another component?
+        can we search on the navbar and then filter the products feed to only show the matching results?
+
+        possible plan:
+        step1: include the form html;
+        step2: get the value of the input;
+        step3: map over this.props.cart and get the product.name;
+        step4: add the conditional. Maybe using .include() since both values will be strings?
+                if(this.props.cart.map(product => product.name).includes(//search input value// === true){
+                  return <p> product.name </p>
+                })
+        step5: print out the products which return "true"
+      */
+
     return (
       <div>
+        <form>
+          <input type="text" value="Search"></input>
+        </form>
+
         {this.props.items.map(product => (
           <SingleItem
             id={product.id}
